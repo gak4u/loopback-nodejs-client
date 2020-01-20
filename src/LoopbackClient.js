@@ -4,7 +4,7 @@ const fetch = typeof window === 'undefined' ? require('node-fetch') : window.fet
 
 const debug = require("debug")("LoopBackClient");
 
-const LoopbackModel = require(__dirname + "/LoopbackModel.js");
+const LoopbackModel = require("./LoopbackModel.js");
 
 
 const handleErrors = response => {
