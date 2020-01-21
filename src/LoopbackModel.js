@@ -8,7 +8,11 @@ const qs = require("qs");
 
 const handleErrors = response => {
   if (!response.ok) {
-    throw response;
+    if(response.status == 422){
+      throw respone.json();
+    }else{
+      throw Error(response.statusText);
+    }
   }
   return response.json();
 };
