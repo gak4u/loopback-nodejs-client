@@ -9,7 +9,7 @@ const qs = require("qs");
 const handleErrors = response => {
   if (!response.ok) {
     if(response.status == 422){
-      throw respone.json();
+      respone.json().then(res => {throw res});
     }else{
       throw Error(response.statusText);
     }
