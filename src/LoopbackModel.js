@@ -7,12 +7,8 @@ const fetch =
 const qs = require("qs");
 
 const handleErrors = response => {
-  if (!response.ok) {
-    if(response.status == 422){
-      response.json().then(res => {throw res});
-    }else{
-      throw Error(response.statusText);
-    }
+  if (!response.ok && response.status != 422) {
+     throw Error(response.statusText);
   }
   return response.json();
 };
